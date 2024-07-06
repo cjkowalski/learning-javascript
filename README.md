@@ -32,6 +32,9 @@ Note: JavaScript counts positions from zero.
 .split("x")                 # A string can be converted to an array (by whatever "x" is)
 ```
 
+<br>
+<br>
+
 ## Conditionals
 
 Example:
@@ -87,6 +90,9 @@ switch(x) {
 }
 ```
 
+<br>
+<br>
+
 ## Arrow Functions
 ```
 let sum = (a, b) => a + b;
@@ -98,4 +104,144 @@ let sum = function(a, b) {
 };
 */
 ```
+
+<br>
+<br>
+
+## Arrays
+
+array: special variable, which can hold more than one value
+```
+const cars = ["Saab", "Volvo", "BMW"];
+
+// or
+
+const cars = [];
+cars[0]= "Saab";
+cars[1]= "Volvo";
+cars[2]= "BMW";
+
+```
+
+Array methods:
+```
+cars.length       // Returns the number of elements (is always one more than the highest array index)
+cars.sort()       // Sorts the array
+cars.toString()   // converts an array to a string of comma separated array values
+cars.at()         // get the x element using at()
+cars.join()       // joins all array elements into a string (specificy the separator inside '()')
+.pop()            // removes the last element from an array
+.push()           // add new element
+.shift()          // removes the first array element and "shifts" all other elements to lower index
+.unshift()        // adds new element to an array at the beginning and unshifts older elements
+.concat()         // creates a new array by merging (concatenating) exsisting arrays ( eg. arrayOne.concat(arrayTwo); )
+.splice()         // add new items to an array ( eg. fruits.splice(2, 0, "Lemon", "Kiwi"); )
+                     first parameter (2) defines where nwe elements should be added (spliced in)
+                     second parameter (0) defines how many elements should be removed
+                     rest of paremters define the new elements to be added
+.slice()          // slices out a piece of an array into a new array
+.map()            // to do something to each item in a collection and create a new collection containing the changed items
+.filter()         // to test each item in a collection, and create a new collection containing only items that match
+```
+
+Looping through Arrays (using a for loop): 
+```
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits.length;
+
+let text = "<ul>";
+for (let i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+```
+
+Adding to an array:
+```
+const fruits = ["Banana", "Orange", "Apple"];
+fruits.push("Lemon");  // Adds a new element (Lemon) to fruits
+
+//or
+
+const fruits = ["Banana", "Orange", "Apple"];
+fruits[fruits.length] = "Lemon";  // Adds "Lemon" to fruits
+```
+
+### When to Use Arrays. When to use Objects.
+- JavaScript does not support associative arrays.
+- You should use <b>objects</b> when you want the element names to be <b>strings (text)</b>.
+- You should use <b>arrays</b> when you want the element names to be <b>numbers</b>.
+
+## Loops
+### 1. for...of loop
+- Given the collection cats, get the first item in the collection.
+- Assign it to the variable cat and then run the code between the curly braces {}.
+- Get the next item, and repeat (2) until you've reached the end of the collection.
+```
+const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+for (const cat of cats) {
+  console.log(cat);
+}
+```
+
+### 2. for loop
+- just want to run the same code x times
+- <b>initializer / counter-variable:</b> this is usually a variable set to a number, which is incremented to count the number of times the loop has run
+- <b>condition: </b>this defines when the loop should stop looping
+- <b>final-expression:</b> this is always evaluated (or run) each time the loop has gone through a full iteration (usally incrementing the counter variable)
+```
+for (initializer; condition; final-expression) {
+  // code to run
+}
+```
+example:
+```
+for (let i = 1; i < 10; i++)
+```
+- ```let i = 1```: the counter variable, i, starts at 1. Note that we have to use let for the counter, because we're reassigning it each time we go round the loop.
+- ```i < 10```: keep going round the loop for as long as i is smaller than 10.
+- ```i++```: add one to i each time round the loop.
+
+<br>
+cat example from above:
+
+```
+const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+for (let i = 0; i < cats.length; i++) {
+  console.log(cats[i]);
+}
+```
+
+### 3. while loop
+```
+let i = 0;
+
+while (i < cats.length) {
+  if (i === cats.length - 1) {
+    myFavoriteCats += `and ${cats[i]}.`;
+  } else {
+    myFavoriteCats += `${cats[i]}, `;
+  }
+
+  i++;
+}
+```
+
+### 4. do... while loop
+```
+let i = 0;
+
+do {
+  if (i === cats.length - 1) {
+    myFavoriteCats += `and ${cats[i]}.`;
+  } else {
+    myFavoriteCats += `${cats[i]}, `;
+  }
+
+  i++;
+} while (i < cats.length);
+```
+
 
