@@ -90,6 +90,12 @@ switch(x) {
 }
 ```
 
+Note:
+```
+==      // used to show equality
+===     // used to show equality AND euqlity in type
+
+
 <br>
 <br>
 
