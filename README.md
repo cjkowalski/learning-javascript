@@ -250,4 +250,7 @@ do {
 } while (i < cats.length);
 ```
 
-
+## Ternary Operators
+```
+x = (1 < 2) ? true : false;
+```
