@@ -94,17 +94,19 @@ Note:
 ```
 ==      // used to show equality
 ===     // used to show equality AND euqlity in type
-
+```
 
 <br>
 <br>
 
 ## Arrow Functions
-```
+
+
 let sum = (a, b) => a + b;
 
-/* This arrow function is a shorter form of:
+This arrow function is a shorter form of:
 
+```
 let sum = function(a, b) {
   return a + b;
 };
@@ -210,6 +212,7 @@ for (let i = 1; i < 10; i++)
 - ```i++```: add one to i each time round the loop.
 
 <br>
+
 cat example from above:
 
 ```
@@ -221,6 +224,7 @@ for (let i = 0; i < cats.length; i++) {
 ```
 
 ### 3. while loop
+
 ```
 let i = 0;
 
@@ -233,6 +237,16 @@ while (i < cats.length) {
 
   i++;
 }
+
+// another example:
+
+let i = 0;
+
+while (i < 5) {
+  console.log(i);
+  i++;
+}
+
 ```
 
 ### 4. do... while loop
@@ -251,6 +265,9 @@ do {
 ```
 
 ## Ternary Operators
+
 ```
 x = (1 < 2) ? true : false;
 ```
+
+
