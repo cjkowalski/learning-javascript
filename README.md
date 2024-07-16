@@ -156,6 +156,13 @@ cars.join()       // joins all array elements into a string (specificy the separ
 
 .reduce() Description: reduce() is a method used to reduce all elements of an array (or iterable) into a single value, such as a number, string, or object. It applies a function to each element of the array, accumulating a result that is returned after all elements have been processed.
 
+```
+const initialValue = 0;
+const sumWithInitial = array1.reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue,
+);
+```
 
 .filter() Description: filter() is a method used to create a new array with all elements that pass a test specified by a callback function. It takes a function as an argument, which tests each element of the array. Elements that pass the test are included in the new array.
 
@@ -287,5 +294,28 @@ do {
 ```
 x = (1 < 2) ? true : false;
 ```
+
+## Misc
+
+```
+const createLabel = (name) => {
+    const label = document.createElement("div");
+    label.className = "label";
+    label.textContent = name;
+    container.appendChild(label);
+  }
+```
+
+## Implicit return:
+
+```
+function add(a, b) {
+  return a + b;
+}
+```
+```
+const add = (a, b) => a + b;
+```
+
 
 
