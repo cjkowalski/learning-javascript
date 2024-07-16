@@ -152,6 +152,24 @@ cars.join()       // joins all array elements into a string (specificy the separ
 .filter()         // to test each item in a collection, and create a new collection containing only items that match
 ```
 
+.map() Description: map() is a method used to transform elements of an array or iterable by applying a function to each element and creating a new array of results. It takes a callback function as an argument, which is applied to each element of the array, and returns a new array where each element is the result of the callback function.
+
+.reduce() Description: reduce() is a method used to reduce all elements of an array (or iterable) into a single value, such as a number, string, or object. It applies a function to each element of the array, accumulating a result that is returned after all elements have been processed.
+
+
+.filter() Description: filter() is a method used to create a new array with all elements that pass a test specified by a callback function. It takes a function as an argument, which tests each element of the array. Elements that pass the test are included in the new array.
+
+.forEach() Description: forEach() executes a provided function once for each array element, similar to a for loop. It does not return a new array but is used to perform actions or side effects on each element of an array.
+
+.some() Description: some() checks if at least one element in the array passes a test (provided as a function). Usage: They return a boolean based on whether the condition is true for any (some()) 
+
+.slice() Description: slice() extracts a section of an array and returns a new array without modifying the original array. It takes two arguments: the start index and the end index (optional), allowing you to extract a portion of an array.
+
+<br>
+<br>
+
+
+
 Looping through Arrays (using a for loop): 
 ```
 const fruits = ["Banana", "Orange", "Apple", "Mango"];
