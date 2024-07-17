@@ -317,5 +317,27 @@ function add(a, b) {
 const add = (a, b) => a + b;
 ```
 
+## Classes
+Classes are in fact "special functions", and just as you can define function expressions and function declarations, a class can be defined in two ways: a class expression or a class declaration.
+Declaration:
+```
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+}
+
+// Getter
+  get area() {
+    return this.calcArea();
+  }
+
+// Method
+  calcArea() {
+    return this.height * this.width;
+  }
+```
+
 
 
