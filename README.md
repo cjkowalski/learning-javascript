@@ -339,5 +339,21 @@ class Rectangle {
   }
 ```
 
+## Object Destructuring
+```
+const obj = { a: 1, b: 2 };
+const { a, b } = obj;
+// is equivalent to:
+// const a = obj.a;
+// const b = obj.b;
+```
+
+```
+const obj = { a: 1, b: { c: 2 } };
+const { a } = obj; // a is constant
+let {
+  b: { c: d },
+} = obj; // d is re-assignable
+```
 
 
