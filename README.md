@@ -166,6 +166,9 @@ const sumWithInitial = array1.reduce(
 
 .filter() Description: filter() is a method used to create a new array with all elements that pass a test specified by a callback function. It takes a function as an argument, which tests each element of the array. Elements that pass the test are included in the new array.
 
+Note: When we pass in alertFunction or function (e) {...} as an argument to addEventListener, we call this a callback. A callback is simply a function that is passed into another function as an argument.
+
+
 .forEach() Description: forEach() executes a provided function once for each array element, similar to a for loop. It does not return a new array but is used to perform actions or side effects on each element of an array.
 
 .some() Description: some() checks if at least one element in the array passes a test (provided as a function). Usage: They return a boolean based on whether the condition is true for any (some()) 
@@ -356,4 +359,81 @@ let {
 } = obj; // d is re-assignable
 ```
 
+## DOM
 
+```
+// selects the #container div (don't worry about the syntax, we'll get there)
+const container = document.querySelector("#container");
+
+// selects the first child of #container => .display
+console.dir(container.firstElementChild);
+
+// selects the .controls div
+const controls = document.querySelector(".controls");
+
+// selects the prior sibling => .display
+console.dir(controls.previousElementSibling);
+
+element.querySelector(selector) - returns a reference to the first match of selector.
+
+element.querySelectorAll(selectors) - returns a “NodeList” containing references to all of the matches of the selectors.
+
+const div = document.createElement("div");
+```
+
+### Append elements
+
+```
+parentNode.appendChild(childNode) - appends childNode as the last child of parentNode.
+parentNode.insertBefore(newNode, referenceNode) - inserts newNode into parentNode before referenceNode.
+
+parentNode.removeChild(child) - removes child from parentNode on the DOM and returns a reference to child.
+```
+
+### Adding inline style
+
+```
+// adds the indicated style rule to the element in the div variable
+div.style.color = "blue";
+
+// adds several style rules
+div.style.cssText = "color: blue; background: white;";
+
+// adds several style rules
+div.setAttribute("style", "color: blue; background: white;");
+```
+
+### Editing Attributes
+
+```
+// if id exists, update it to 'theDiv', else create an id with value "theDiv"
+div.setAttribute("id", "theDiv");
+
+// returns value of specified attribute, in this case "theDiv"
+div.getAttribute("id");
+
+// removes specified attribute
+div.removeAttribute("id");
+```
+
+### Working with Classes
+
+```
+// adds class "new" to your new div
+div.classList.add("new");
+
+// removes "new" class from div
+div.classList.remove("new");
+
+// if div doesn't have class "active" then add it, or if it does, then remove it
+div.classList.toggle("active");
+```
+
+
+### Adding Event Listeners
+```
+const btn = document.querySelector("#btn");
+btn.addEventListener("click", () => {
+  alert("Hello World");
+});
+```
