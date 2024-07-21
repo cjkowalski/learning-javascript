@@ -154,7 +154,17 @@ cars.join()       // joins all array elements into a string (specificy the separ
 
 .map() Description: map() is a method used to transform elements of an array or iterable by applying a function to each element and creating a new array of results. It takes a callback function as an argument, which is applied to each element of the array, and returns a new array where each element is the result of the callback function.
 
-.reduce() Description: reduce() is a method used to reduce all elements of an array (or iterable) into a single value, such as a number, string, or object. It applies a function to each element of the array, accumulating a result that is returned after all elements have been processed.
+```
+function addOne(num) {
+  return num + 1;
+}
+const arr = [1, 2, 3, 4, 5];
+const mappedArr = arr.map(addOne);
+console.log(mappedArr); // Outputs [2, 3, 4, 5, 6]
+```
+
+.reduce() Description: reduce() is a method used to reduce all elements of an array (or iterable) into a single value, such as a number, string, or object. It applies a function to each element of the array, accumulating a result that is returned after all elements have been processed. The first argument is the `accumulator`, which is the current value of the result at that point in the loop. The first time through, this value will either be set to the initialValue (described in the next bullet point), or the first element in the array if no initialValue is provided. The second argument for the callback is the current value, which is the item currently being iterated on. It also takes in an `initialValue` as a second argument (after the callback), which helps when we don’t want our initial value to be the first element in the array. For instance, if we wanted to sum all numbers in an array, we could call reduce without an initialValue, but if we wanted to sum all numbers in an array and add 10, we could use 10 as our initialValue.
+
 
 ```
 const initialValue = 0;
@@ -162,9 +172,31 @@ const sumWithInitial = array1.reduce(
   (accumulator, currentValue) => accumulator + currentValue,
   initialValue,
 );
+
+// example: 
+const arr = [1, 2, 3, 4, 5];
+const productOfAllNums = arr.reduce((total, currentItem) => {
+  return total * currentItem;
+}, 1);
+console.log(productOfAllNums); // Outputs 120;
+console.log(arr); // Outputs [1, 2, 3, 4, 5]
 ```
 
 .filter() Description: filter() is a method used to create a new array with all elements that pass a test specified by a callback function. It takes a function as an argument, which tests each element of the array. Elements that pass the test are included in the new array.
+
+```
+function isOdd(num) {
+  return num % 2 !== 0;
+}
+const arr = [1, 2, 3, 4, 5];
+const oddNums = arr.filter(isOdd);
+console.log(oddNums);    // Outputs [1, 3, 5];
+console.log(arr);        // Outputs [1, 2, 3, 4, 5], original array is not affected
+
+// filter will iterate through arr and pass every value into the isOdd callback function, one at a time.
+// isOdd will return true when the value is odd, which means this value is included in the output.
+// If it’s an even number, isOdd will return false and not include it in the final output.
+```
 
 Note: When we pass in alertFunction or function (e) {...} as an argument to addEventListener, we call this a callback. A callback is simply a function that is passed into another function as an argument.
 
