@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Object-oriented JavaScript example</title>
+  </head>
+
+  <body>
+    <p>This example requires you to enter commands in your browser's JavaScript console (see <a href="https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools">What are browser developer tools</a> for more information).</p>
+    
+    <script>
+
+      const person = {
+        name: {
+          first: "Bob",
+          last: "Smith",
+        },
+        age: 32,
+        bio() {
+          console.log(`${this.name[0]} ${this.name[1]} is ${this.age} years old.`);
+          },
+          introduceSelf: function () {
+            console.log(`Hi! I'm ${this.name[0]}.`);
+          },
+        };
+
+      console.log(person.name.first);
+
+      person.age = 45;
+      person["name"]["last"] = "Cratchit"
+
+      console.log(person.age)
+      console.log(person["name"]["last"])
+
+      person["eyes"] = "hazel"
+      person.farewell = function() {
+        console.log("bye everyone!")
+      }
+
+      console.log(person["eyes"])
+      console.log(person.farewell())
+
+      // const myDataName = nameInput.value;
+      // const myDataValue = nameValue.value;
+
+      // person[myDataName] = myDataValue;
+
+      const myDataName = "height";
+      const myDataValue = "1.75m";
+      person[myDataName] = myDataValue;
+
+      console.log(person.height)
+
+      // introduceSelf() {
+      //   console.log(`Hi! I'm ${this.name[0]}.`);
+      // }   
+
+      // this: a keyword that refers to the current object the code is being executed on (the object that the method was called on)
+
+      const person1 = {
+        name: "Chris",
+        introduceSelf() {
+          console.log(`Hi! I'm ${this.name}.`);
+        },
+      };
+
+      const person2 = {
+        name: "Deepti",
+        introduceSelf() {
+          console.log(`Hi! I'm ${this.name}.`);
+        },
+      };
+
+      console.log(person1.introduceSelf()); // Hi im chris
+      console.log(person2.introduceSelf()); // hi im deepti
+
+      // this is more essential when using constructors to create more than one object from a single object definition
+
+
+
+
+
+      // !! CONSTRUCTORS: !!
+
+      function createPerson(name) {     // takes a parameter name to set value of name property
+        const obj = {};
+        obj.name = name;
+        obj.introduceSelf = function () {
+          console.log(`Hi! I'm ${this.name}.`);   // this value is same for all objects created
+        };
+        return obj;
+      }
+
+      const salva = createPerson("Salva");
+      salva.introduceSelf();
+      // "Hi! I'm Salva."
+
+      const frankie = createPerson("Frankie");
+      frankie.introduceSelf();
+      // "Hi! I'm Frankie." 
+
+
+
+      // OR
+
+
+      function Person(name) {
+        this.name = name;
+        this.introduceSelf = function () {
+          console.log(`Hi! I'm ${this.name}.`);
+        };
+      }
+
+      const salva2 = new Person("Salva");
+      salva2.introduceSelf();
+      // "Hi! I'm Salva."
+
+      const frankie2 = new Person("Frankie");
+      frankie2.introduceSelf();
+      // "Hi! I'm Frankie."
+
+
+
+    </script>
+  </body>
+
+</html>
