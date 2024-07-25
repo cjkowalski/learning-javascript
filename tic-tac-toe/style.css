@@ -1,0 +1,12 @@
+#gameboard {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  margin: 0 auto;
+  width: 320px;
+  gap: 10px;
+}
+
+.square {
+  border: 1px solid black;
+}
